@@ -8,30 +8,51 @@
               <a href="/logout" class="col-3 btn btn-primary">Logout</a>
           </div>
           <div class="mt-5">
-            <h2>Add a post</h2>
-            <form action="/post/createPost" enctype="multipart/form-data" method="POST">
+            <h2>Add a Student to Caseload</h2>
+            <form action="/student/createStudent" enctype="multipart/form-data" method="POST">
               <div class="mb-3">
-                  <label for="title" class="form-label">Title</label>
-                  <input type="text" class="form-control" id="title" name="title">
+                  <label for="studentName" class="form-label">Student Name</label>
+                  <input type="text" class="form-control" id="studentName" name="studentName">
               </div>
               <div class="mb-3">
-                <label for="caption" class="form-label">Caption</label>
-                <textarea class="form-control" id="caption" name="caption"></textarea>
+                <label for="disability" class="form-label">Disability</label>
+                <textarea class="form-control" id="disability" name="disability"></textarea>
               </div>
               <div class="mb-3">
+                <label for="strengths" class="form-label">Strengths</label>
+                <textarea class="form-control" id="strengths" name="strengths"></textarea>
+              </div>
+              <div class="mb-3">
+                <label for="areasOfGrowth" class="form-label">Areas of Growth</label>
+                <textarea class="form-control" id="areasOfGrowth" name="areasOfGrowth"></textarea>
+              </div>
+              <div class="mb-3">
+                <label for="accommodations" class="form-label">Accommodations</label>
+                  <ul>
+                    <input id="calculator" type="checkbox" value="Calculator" name="accommodations">
+                    <label for="calculator">Calculator</label>
+                    <input id="referenceSheet" type="checkbox" value="Reference Sheet" name="accommodations">
+                    <label for="referenceSheet">Reference Sheet</label>
+                    <input id="graphicOrganizer" type="checkbox" value="Graphic Organizer" name="accommodations">
+                    <label for="graphicOrganizer">Graphic Organizer</label>
+                  </ul>
+                <!-- <textarea class="form-control" id="accommodations" name="accommodations"></textarea> -->
+              </div>
+              <!-- <div class="mb-3">
                 <label for="imgUpload" class="form-label">Image</label>
                 <input type="file" class="form-control" id="imageUpload" name="file">
-              </div>
+              </div> -->
               <button type="submit" class="btn btn-primary" value="Upload">Submit</button>
             </form>
           </div>
       </div>
       <div class="col-6">
         <ul class="row list-unstyled">
-        <% for(var i=0; i<posts.length; i++) {%>
+        <% for(var i=0; i<students.length; i++) {%>
           <li class="col-6 justify-content-between mt-5">
-            <a href="/post/<%= posts[i]._id%>">
-              <img class="img-fluid" src="<%= posts[i].image%>">
+            <a href="/student/<%= students[i]._id%>">
+              <span class="text"><%= students[i].studentName %></span>  
+              <!-- <img class="text" src="<%= students[i].studentName%>"> -->
             </a>
           </li>
         <% } %>

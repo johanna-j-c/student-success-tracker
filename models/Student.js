@@ -1,24 +1,33 @@
 const mongoose = require("mongoose");
 
-const PostSchema = new mongoose.Schema({
-  title: {
+const StudentSchema = new mongoose.Schema({
+  studentName: {
     type: String,
     required: true,
   },
   image: {
     type: String,
-    require: true,
+    require: false,
   },
   cloudinaryId: {
     type: String,
-    require: true,
+    require: false,
   },
-  caption: {
+  disability: {
     type: String,
     required: true,
   },
-  likes: {
-    type: Number,
+  strengths: {
+    type: String,
+    required: true,
+  },
+  areasOfGrowth: {
+    type: String,
+    required: true,
+  },
+  accommodations: {
+    type: Array,
+    default: [],
     required: true,
   },
   user: {
@@ -31,4 +40,4 @@ const PostSchema = new mongoose.Schema({
   },
 });
 
-module.exports = mongoose.model("Post", PostSchema);
+module.exports = mongoose.model("Student", StudentSchema);
