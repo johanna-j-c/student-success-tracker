@@ -21,7 +21,7 @@ module.exports = {
   getStudent: async (req, res) => {
     try {
       const student = await Student.findById(req.params.id);
-      res.render("student.ejs", { student: req.params.id, user: req.user });
+      res.render("student.ejs", { student: student, user: req.user });
     } catch (err) {
       console.log(err);
     }
