@@ -1,5 +1,5 @@
 const cloudinary = require("../middleware/cloudinary");
-const Student = require("../models/Student");
+const Goal = require("../models/Goal");
 
 module.exports = {
   getProfile: async (req, res) => {
@@ -12,36 +12,38 @@ module.exports = {
   },
   getFeed: async (req, res) => {
     try {
-      const students = await Student.find().sort({ createdAt: "desc" }).lean();
+      const posts = await Student.find().sort({ createdAt: "desc" }).lean();
       res.render("feed.ejs", { students: students });
     } catch (err) {
       console.log(err);
     }
   },
-  getStudent: async (req, res) => {
+  getGoal: async (req, res) => {
     try {
-      const student = await Student.findById(req.params.id);
-      res.render("student.ejs", { student: student, user: req.user });
+      const goal = await Goal.findById(req.params.id);
+      res.render("goal.ejs", { goal: goal, user: req.user });
     } catch (err) {
       console.log(err);
     }
   },
-  createStudent: async (req, res) => {
+  createGoal: async (req, res) => {
     try {
       // Upload image to cloudinary
       // const result = await cloudinary.uploader.upload(req.file.path);
 
-      await Student.create({
-        studentName: req.body.studentName,
+      await Goal.create({
+        goalArea: req.body.goalArea,
         // image: result.secure_url,
         // cloudinaryId: result.public_id,
-        disability: req.body.disability,
-        strengths: req.body.strengths,
-        areasOfGrowth: req.body.areasOfGrowth,
-        accommodations: req.body.accommodations,
+        goal: req.body.goal,
+        objective1: req.body.objective1,
+        objective2: req.body.objective2,
+        objective3: req.body.objective2,
+        objective4: req.body.objective2,
+        studentsAssigned: req.body.studentsAssigned,
         user: req.user.id,
       });
-      console.log("Student has been added!");
+      console.log("Goal has been added!");
       res.redirect("/profile");
     } catch (err) {
       console.log(err);

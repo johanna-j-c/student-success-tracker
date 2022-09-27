@@ -57,6 +57,44 @@
           </li>
         <% } %>
         </ul>
+      </div>
+        <h2>Add an IEP Goal</h2>
+        <form action="/goal/createGoal" enctype="multipart/form-data" method="POST">
+          <div class="mb-3">
+              <label for="goalArea" class="form-label">Goal Area</label>
+                <select id="goalArea" name="goalArea">
+                  <option value="math">Math Skills</option>
+                  <option value="readingAndWriting">Reading and Writing Skills</option>
+                  <option value="executiveFunctioning">Executive Functioning Skills</option>
+                  <option value="self-Regulation">Self-Regulation Skills</option>
+                </select>
+          </div>
+          <div class="mb-3">
+            <label for="goal" class="form-label">Goal</label>
+            <textarea class="form-control" id="goal" name="goal"></textarea>
+          </div>
+          <div class="mb-3">
+            <label for="objective1" class="form-label">Objective 1</label>
+            <textarea class="form-control" id="objective1" name="objective1"></textarea>
+          </div>
+          <div class="mb-3">
+            <label for="objective2" class="form-label">Objective 2</label>
+            <textarea class="form-control" id="objective2" name="objective2"></textarea>
+          </div>
+          <div class="mb-3">
+            <label for="objective3" class="form-label">Objective 3</label>
+            <textarea class="form-control" id="objective3" name="objective3"></textarea>
+          </div>
+          <div class="mb-3">
+            <label for="objective4" class="form-label">Objective 4</label>
+            <textarea class="form-control" id="objective4" name="objective4"></textarea>
+          </div>
+
+          <div class="mb-3">
+            <label for="imgUpload" class="form-label">Image</label>
+            <input type="file" class="form-control" id="imageUpload" name="file">
+          </div>
+          <button type="submit" class="btn btn-primary" value="Upload">Submit</button>
         <div class="row justify-content-center mt-5">
           <a class="btn btn-primary" href="/feed">Return to Feed</a>
         </div>  
