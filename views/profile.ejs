@@ -94,8 +94,8 @@
             <ul class="row list-unstyled">
               <% for(var i=0; i<students.length; i++) {%>
                 <li class="col-6 justify-content-between mt-5">
-                  <input id="<%= students.studentName[i] %>" type="checkbox" value="<%= students.studentName[i] %>" name="accommodations">
-                    <label for="<%= students.studentName[i] %>"> <%= students.studentName[i] %></label>
+                  <span id="<%=students[i].studentName%>"><%=students[i].studentName%></span>
+                    <label for="<%=students[i].studentName%>"><%=students[i].studentName%></label>
                 </li>
               <% } %>
               </ul> 
