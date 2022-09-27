@@ -94,17 +94,16 @@
             <ul class="row list-unstyled">
               <% for(var i=0; i<students.length; i++) {%>
                 <li class="col-6 justify-content-between mt-5">
-                  <span id="<%=students[i].studentName%>"><%=students[i].studentName%></span>
+                  <input id="<%=students[i].studentName%>" type="checkbox" value="<%=students[i].studentName%>" name="<%=students[i].studentName%>">
                     <label for="<%=students[i].studentName%>"><%=students[i].studentName%></label>
                 </li>
               <% } %>
               </ul> 
-            <textarea class="form-control" id="accommodations" name="accommodations"></textarea>
           </div>
-          <div class="mb-3">
+          <!-- <div class="mb-3">
             <label for="imgUpload" class="form-label">Image</label>
             <input type="file" class="form-control" id="imageUpload" name="file">
-          </div>
+          </div> -->
           <button type="submit" class="btn btn-primary" value="Upload">Submit</button>
         <div class="row justify-content-center mt-5">
           <a class="btn btn-primary" href="/feed">Return to Feed</a>
