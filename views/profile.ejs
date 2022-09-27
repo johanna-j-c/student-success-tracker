@@ -89,7 +89,18 @@
             <label for="objective4" class="form-label">Objective 4</label>
             <textarea class="form-control" id="objective4" name="objective4"></textarea>
           </div>
-
+          <div class="mb-3">
+            <label for="studentsAssigned" class="form-label">Students Assigned</label>
+            <ul class="row list-unstyled">
+              <% for(var i=0; i<students.length; i++) {%>
+                <li class="col-6 justify-content-between mt-5">
+                  <input id="<%= students.studentName[i] %>" type="checkbox" value="<%= students.studentName[i] %>" name="accommodations">
+                    <label for="<%= students.studentName[i] %>"> <%= students.studentName[i] %></label>
+                </li>
+              <% } %>
+              </ul> 
+            <textarea class="form-control" id="accommodations" name="accommodations"></textarea>
+          </div>
           <div class="mb-3">
             <label for="imgUpload" class="form-label">Image</label>
             <input type="file" class="form-control" id="imageUpload" name="file">
