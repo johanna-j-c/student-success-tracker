@@ -12,8 +12,8 @@ module.exports = {
   },
   getFeed: async (req, res) => {
     try {
-      const posts = await Student.find().sort({ createdAt: "desc" }).lean();
-      res.render("feed.ejs", { students: students });
+      const goals = await Goal.find().sort({ createdAt: "desc" }).lean();
+      res.render("feed.ejs", { goals: goals });
     } catch (err) {
       console.log(err);
     }
