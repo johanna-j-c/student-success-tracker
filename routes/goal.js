@@ -11,6 +11,6 @@ router.post("/createGoal", upload.single("file"), goalController.createGoal);
 
 // router.put("/likePost/:id", postsController.likePost);
 
-// router.delete("/deletePost/:id", postsController.deletePost);
+router.delete("/deleteGoal/:id", goalController.deleteGoal);
 
 module.exports = router;

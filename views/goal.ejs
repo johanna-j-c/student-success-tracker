@@ -4,16 +4,15 @@
     <div class="col-6">
       <h2><%= goal.goalArea %></h2>
       <h3><%= goal.goal %></h3>
-        <!-- <%if(goal.user == user.id){ %>
-        <form
-          action="/goal/deleteGoal/<%= goal.id %>?_method=DELETE"
-          method="POST"
-          class="col-3"
-        >
-          <button class="btn btn-primary fa fa-trash" type="submit"></button>
-        </form>
-        <%}%> -->
-      </div>
+        <%if(goal.user == user.id){ %>
+            <form
+            action="/goal/deleteGoal/<%= goal.id %>?_method=DELETE"
+            method="POST"
+            class="col-3"
+            >
+            <button class="btn btn-primary fa fa-trash" type="submit"></button>
+            </form>
+        <%}%>
     </div>
     <div class="col-3 mt-5">
       <h4>Objective 1</h4>
