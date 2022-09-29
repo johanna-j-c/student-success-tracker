@@ -10,10 +10,10 @@ module.exports = {
       console.log(err);
     }
   },
-  getFeed: async (req, res) => {
+  getBank: async (req, res) => {
     try {
       const goals = await Goal.find().sort({ createdAt: "desc" }).lean();
-      res.render("feed.ejs", { goals: goals });
+      res.render("bank.ejs", { goals: goals });
     } catch (err) {
       console.log(err);
     }
