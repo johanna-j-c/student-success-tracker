@@ -27,6 +27,17 @@
         <dt class="text-sm font-medium text-gray-500">Accommodations</dt>
         <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0"><%= student.accommodations %></dd>
       </div>
+      <div>
+        <%if(student.user == user.id){ %>
+            <form
+            action="/student/deleteStudent/<%= student.id %>?_method=DELETE"
+            method="POST"
+            class="col-3"
+            >
+            <button class="flex items-center justify-center rounded-md border border-transparent bg-indigo-600 px-8 py-3 text-base font-medium text-white hover:bg-indigo-700 md:py-4 md:px-10 md:text-lg"  type="submit">Delete</button>
+            </form>
+        <%}%>
+    </div> 
     </dl>
   </div>
 </div>
