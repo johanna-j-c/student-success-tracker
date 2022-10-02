@@ -25,7 +25,7 @@
 </div>
 
 
-<div class="container">
+<div class="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">
   <div class="row mt-5">
       <div class="col-6">
           <div class="mt-5">
@@ -70,19 +70,20 @@
             <a class="flex w-half items-center justify-center rounded-md border border-transparent bg-indigo-600 px-8 py-3 text-base font-medium text-white hover:bg-indigo-700 md:py-4 md:px-10 md:text-lg" href="/caseload">View Caseload</a>
           </div>
       </div>
-      <div class="col-6">
+      <!-- <div class="col-6">
         <h2 class="h2">Caseload</h2>
         <ul class="row list-unstyled">
         <% for(var i=0; i<students.length; i++) {%>
           <li class="col-6 justify-content-between mt-5">
             <a href="/student/<%= students[i]._id%>">
               <span class="text"><%= students[i].studentName %></span>  
-              <!-- <img class="text" src="<%= students[i].studentName%>"> -->
+              <img class="text" src="<%= students[i].studentName%>">
             </a>
           </li>
         <% } %>
         </ul>
-      </div>
+        </div> -->
+      <div class="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8"> 
         <h2 class="h2">Add an IEP Goal</h2>
         <form action="/goal/createGoal" enctype="multipart/form-data" method="POST">
           <div class="mb-3">
