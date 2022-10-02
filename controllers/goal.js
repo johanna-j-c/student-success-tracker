@@ -58,9 +58,9 @@ module.exports = {
       // Delete post from db
       await Goal.remove({ _id: req.params.id });
       console.log("Deleted Goal");
-      res.redirect("/feed");
+      res.redirect("/bank");
     } catch (err) {
-      res.redirect("/feed");
+      res.redirect("/bank");
     }
   },
 };

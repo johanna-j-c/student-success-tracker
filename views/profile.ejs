@@ -1,4 +1,30 @@
 <%- include('partials/header') -%>
+
+<!--
+  This example requires updating your template:
+
+  ```
+  <html class="h-full bg-gray-100">
+  <body class="h-full">
+  ```
+-->
+
+  <header class="bg-white">
+    <div class="mx-auto max-w-7xl py-6 px-4 sm:px-6 lg:px-8">
+      <h1 class="text-3xl font-bold tracking-tight text-gray-900">Profile</h1>
+    </div>
+  </header>
+  <main>
+    <div class="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">
+      <!-- Replace with your content -->
+      <p><strong>User Name</strong>: <%= user.userName %></p>
+      <p><strong>Email</strong>: <%= user.email %></p>
+      <!-- /End replace -->
+    </div>
+  </main>
+</div>
+
+
 <div class="container">
   <div class="row mt-5">
       <div class="col-6">
