@@ -10,10 +10,10 @@ module.exports = {
       console.log(err);
     }
   },
-  getFeed: async (req, res) => {
+  getCaseload: async (req, res) => {
     try {
       const students = await Student.find().sort({ createdAt: "desc" }).lean();
-      res.render("feed.ejs", { students: students });
+      res.render("caseload.ejs", { students: students });
     } catch (err) {
       console.log(err);
     }
