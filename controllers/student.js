@@ -47,6 +47,18 @@ module.exports = {
       console.log(err);
     }
   },
+  deleteStudent: async (req, res) => {
+    try {
+      // Find student by id
+      let student = await Student.findById({ _id: req.params.id });
+      // Delete student from db
+      await Student.remove({ _id: req.params.id });
+      console.log("Deleted Student");
+      res.redirect("/profile");
+    } catch (err) {
+      res.redirect("/profile");
+    }
+  },
 };
 //   likePost: async (req, res) => {
 //     try {
@@ -62,18 +74,4 @@ module.exports = {
 //       console.log(err);
 //     }
 //   },
-//   deletePost: async (req, res) => {
-//     try {
-//       // Find post by id
-//       let post = await Post.findById({ _id: req.params.id });
-//       // Delete image from cloudinary
-//       await cloudinary.uploader.destroy(post.cloudinaryId);
-//       // Delete post from db
-//       await Post.remove({ _id: req.params.id });
-//       console.log("Deleted Post");
-//       res.redirect("/profile");
-//     } catch (err) {
-//       res.redirect("/profile");
-//     }
-//   },
-// };
+

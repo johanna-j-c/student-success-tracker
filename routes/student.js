@@ -11,6 +11,6 @@ router.post("/createStudent", upload.single("file"), studentController.createStu
 
 // router.put("/likePost/:id", postsController.likePost);
 
-// router.delete("/deletePost/:id", postsController.deletePost);
+router.delete("/deleteStudent/:id", studentController.deleteStudent);
 
 module.exports = router;
