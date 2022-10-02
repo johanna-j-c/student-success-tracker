@@ -1,0 +1,22 @@
+<%- include('partials/header') -%>
+<header class="bg-white">
+  <div class="mx-auto max-w-7xl py-6 px-4 sm:px-6 lg:px-8">
+    <h1 class="text-3xl font-bold tracking-tight text-gray-900">Caseload</h1>
+  </div>
+</header>
+
+  <div class="container">
+    <div class="row justify-content-center mt-5">
+        <ul class="row lisit-group list-group-flush">
+            <% for(var i=0; i<students.length; i++) {%>
+              <li class="list-group-item">
+                <a href="/student/<%= students[i]._id%>">
+                  <span class="text"><%= students[i].studentName %></span>  
+                  <!-- <img class="text" src="<%= students[i].studentName%>"> -->
+                </a>
+              </li>
+            <% } %>
+            </ul>
+    </div>
+  </div>  
+<%- include('partials/footer') -%>
